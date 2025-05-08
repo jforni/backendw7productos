@@ -77,9 +77,6 @@ const usuarioPut = async (req = request, res = response) => {
 const usuarioDelete = async (req = request, res = response) => {
   const {id} = req.params;
 
-  //Para eliminar el registro fisicamente
-  /* const usuarioBorrado = await Usuario.findByIdAndDelete(id); */
-
   //Para cambiar el estado a false
   const usuario = await Usuario.findById(id);
 
@@ -94,8 +91,6 @@ const usuarioDelete = async (req = request, res = response) => {
   res.json({
     mensaje: "Usuario inhabilitado",
     usuarioInhabilitado
-    /* mensaje: "Usuario eliminado correctamente",
-    usuarioBorrado */
   })
 }
 
